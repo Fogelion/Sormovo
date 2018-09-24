@@ -7,8 +7,6 @@ class Article extends Component {
 	};
 	render() {
 		const {article} = this.props;
-		// console.log('---', this.props);
-		// console.log('---', article);
 		const body = this.state.isOpen && <section>{article.text}</section>;
 		let butName = this.state.isOpen ? 'close' : 'open';
 		return (
