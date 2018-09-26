@@ -1,15 +1,25 @@
-import React, { Component } from 'react';
-import Article from './Article';
-import ArticleList from "./ArticleList";
-import articles from '../fixtures'
+// import Article from './Article';
+// import ArticleList from "./ArticleList";
+// import articles from '../fixtures';
 
+import React, { Component } from 'react';
+import NavBar from './NavBar/NavBar';
+import navPoints from './NavBar/navPoints';
+import Header from './Header/Header';
+import MainSection from './MainSection/MainSection';
+
+
+
+import './App.css';
 
 class App extends Component {
 	render() {
     return (
       <div className="App">
-				<h1>This App:</h1>
-				<ArticleList articleList = {articles} />
+				<Header />
+				<NavBar navPoints = {navPoints}/>
+				<MainSection />
+				{/*<ArticleList articleList = {articles} />*/}
       </div>
     );
   }

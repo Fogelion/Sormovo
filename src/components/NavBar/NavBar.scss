@@ -1,0 +1,32 @@
+
+@font-face {
+  font-family: Blagovest;
+  src: url(../../fonts/Blagovest.ttf);
+}
+
+.NavBlock ul {
+  margin-top: 0;
+}
+
+.NavBlock ul a {
+  font-family: Blagovest, sans-serif;
+  display: block;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 5px 15px 5px 15px;
+  border-top: 2px solid #f0f0f0;
+  background: linear-gradient(to bottom, #ffffff 0%,#f0f0f0 100%);
+  border-radius: 5px;
+  margin-bottom: 1px;
+}
+
+.NavBlock ul a:link, .NavBlock ul a:visited {
+  color: #186F9C;
+}
+.NavBlock ul a:hover{
+  color: #e5822b;
+}
+.NavBlock ul a:focus{
+  color: darkslategray;
+  border-top: 2px solid #e5822b;
+}
