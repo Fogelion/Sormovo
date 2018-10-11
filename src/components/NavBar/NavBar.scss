@@ -6,6 +6,7 @@
 
 .NavBlock ul {
   margin-top: 0;
+  //padding-left: 0;
 }
 
 .NavBlock ul a {
@@ -18,6 +19,9 @@
   background: linear-gradient(to bottom, #ffffff 0%,#f0f0f0 100%);
   border-radius: 5px;
   margin-bottom: 1px;
+}
+.NavBlock ul a svg{
+  margin-right: 7px;
 }
 
 .NavBlock ul a:link, .NavBlock ul a:visited {
