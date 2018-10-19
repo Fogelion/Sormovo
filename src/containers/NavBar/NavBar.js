@@ -4,9 +4,12 @@ import './NavBar.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel, faChurch, faGraduationCap, faCameraRetro, faPen } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+
+
+
 
 library.add( faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel, faChurch, faGraduationCap, faCameraRetro, faPen );
-
 
 class NavBarList extends Component {
 	// state = {
@@ -14,21 +17,25 @@ class NavBarList extends Component {
 	// };
 
 	NavClick = (event) => {
-		console.dir(event.target);
-		console.log(event.target.id + ' = ' + event.target.innerText);
-		this.props.onNavClick(event.target.id);
+		// console.dir(event.target);
+		// console.dir(event.currentTarget);
+		// console.log(event.currentTarget.id + ' = ' + event.target.innerText);
+		this.props.onNavClick(event.currentTarget.id);
 	};
 	render() {
-		console.log(this.props);
+		// console.log(this.props);
 		const navList = this.props.navPoints.map(elem =>
-			<a
-				href="#"
+			<li
+				// href={'/' + elem.route}
 				key={elem.id}
 				id={elem.id}
 				onClick={this.NavClick}
 			>
+				<Link to={'/' + elem.route}>
 				<FontAwesomeIcon icon={elem.icon} />
-				{elem.name}</a>
+				{elem.name}
+				</Link>
+			</li>
 		);
 		return (
 			<nav className='NavBlock'>

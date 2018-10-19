@@ -1,0 +1,28 @@
+@font-face {
+  font-family: Blagovest;
+  src: url(../../fonts/Blagovest.ttf); }
+@font-face {
+  font-family: Izvestija;
+  src: url(../../fonts/Izvestija.ttf); }
+#headerLogo {
+  height: 150px; }
+
+.imgTest {
+  width: 1100px;
+  border-radius: 5px; }
+
+.Header {
+  font-family: Izvestija, sans-serif;
+  border-radius: 5px;
+  background: url("../../image/headerBack.jpg");
+  background-size: cover; }
+
+.Header * {
+  align-self: center;
+  justify-self: center; }
+
+.HeaderName {
+  margin: 0;
+  font-size: 90px;
+  color: #004b9e;
+  text-shadow: -1px -1px 0px #c6dfff, 2px 2px 1px #04283c, 0px 0px 5px #000; }
