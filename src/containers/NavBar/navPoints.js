@@ -1,4 +1,5 @@
 import React from 'react';
+import Home from '../../components/Home/Home.js';
 import Geography from '../../components/Geography/Geography.js';
 import History from '../../components/History/History.js';
 import Buildings from '../../components/Buildings/Buildings.js';
@@ -11,6 +12,13 @@ import Photos from '../../components/Photos/Photos.js';
 import Authors from '../../components/Authors/Authors.js';
 
 export default [
+	{
+		'id': 'navPointBut0',
+		'name': 'Главная',
+		'icon': 'home',
+		'route': '',
+		'component': () => <Home/>
+	},
 	{
 		'id': 'navPointBut1',
 		'name': 'География',
