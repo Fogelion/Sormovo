@@ -1,5 +1,7 @@
 import React from 'react';
 import PersExamp from "./PersExamp";
+import { Route, Link } from 'react-router-dom';
+import UnionRoute from "../UnionRoute";
 
 export default function PersonalInfo({ match }) {
 	// console.log(match.params.pers);
@@ -13,11 +15,14 @@ export default function PersonalInfo({ match }) {
 				<header className='headerPersons'>
 					<h2>{currentPers.title}</h2>
 					<time dateTime={formatDate}>{formatDate}</time>
+					<Link to={`${match.url}/testPage`}>To the test</Link>
 				</header>
 				<article className='contentPersons'>
 					<p dangerouslySetInnerHTML={{__html: currentPers.text}}></p>
 				</article>
 			</section>
+			{/*<Route path="/personalities/:pers/:test" component={UnionRoute} />*/}
 		</div>
 	);
 }
+

@@ -20,13 +20,14 @@ class NavBarList extends Component {
 		this.props.onNavClick(event.currentTarget.id);
 	};
 	render() {
-		const navList = this.props.navPoints.map((elem) => {
+		let navMenu = this.props.navPoints.filter(elem => elem.forNavBar);
+		const navList = navMenu.map((elem) => {
 			return <li
 				key={elem.id}
 				id={elem.id}
 				onClick={this.NavClick}
 			>
-				<Link to={'/' + elem.route}>
+				<Link to={elem.route}>
 					<FontAwesomeIcon icon={elem.icon}/>
 					{elem.name}
 				</Link>
