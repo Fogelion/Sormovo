@@ -37,6 +37,9 @@ class NavBarList extends Component {
 			<nav className='NavBlock'>
 				<ul>
 					{navList}
+					<Link to='/nonono/404'>
+						error 404
+					</Link>
 				</ul>
 			</nav>
 		);

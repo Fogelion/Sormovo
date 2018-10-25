@@ -12,6 +12,7 @@ import Churches from '../../components/Churches/Churches.js';
 import Schools from '../../components/Schools/Schools.js';
 import Photos from '../../components/Photos/Photos.js';
 import Authors from '../../components/Authors/Authors.js';
+import NotFound from '../../components/NotFound/NotFound.js';
 
 export default [
 	{
@@ -136,5 +137,12 @@ export default [
 		'component': () => <Authors/>,
 		'componentName': <Authors/>
 		// 'component': 'Authors'
+	},
+	{
+		'id': 'navPointBut1100',
+		'forNavBar': false,
+		'name': '404',
+		'route': '*',
+		'componentName': <NotFound />
 	}
 ]
