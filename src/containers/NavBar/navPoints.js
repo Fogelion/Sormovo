@@ -1,18 +1,18 @@
 import React from 'react';
-import Home from '../../components/Home/Home.js';
-import Geography from '../../components/Geography/Geography.js';
-import History from '../../components/History/History.js';
-import Buildings from '../../components/Buildings/Buildings.js';
-import Achievements from '../../components/Achievements/Achievements.js';
-import Personalities from '../../components/Personalities/Personalities.js';
-import PersonalInfo from "../../components/Personalities/PersonalInfo";
-import PersonalTest from "../../components/Personalities/PersonalTest";
-import Monuments from '../../components/Monuments/Monuments.js';
-import Churches from '../../components/Churches/Churches.js';
-import Schools from '../../components/Schools/Schools.js';
-import Photos from '../../components/Photos/Photos.js';
-import Authors from '../../components/Authors/Authors.js';
-import NotFound from '../../components/NotFound/NotFound.js';
+import Home from '../../components/Pages/Home/Home.js';
+import Geography from '../../components/Pages/Geography/Geography.js';
+import History from '../../components/Pages/History/History.js';
+import Buildings from '../../components/Pages/Buildings/Buildings.js';
+import Achievements from '../../components/Pages/Achievements/Achievements.js';
+import Personalities from '../../components/Pages/Personalities/Personalities.js';
+import PersonalInfo from "../../components/Pages/Personalities/PersonalInfo";
+import PersonalTest from "../../components/Pages/Personalities/PersonalTest";
+import Monuments from '../../components/Pages/Monuments/Monuments.js';
+import Churches from '../../components/Pages/Churches/Churches.js';
+import Schools from '../../components/Pages/Schools/Schools.js';
+import Photos from '../../components/Pages/Photos/Photos.js';
+import Authors from '../../components/Pages/Authors/Authors.js';
+import NotFound from '../../components/Pages/NotFound/NotFound.js';
 
 export default [
 	{

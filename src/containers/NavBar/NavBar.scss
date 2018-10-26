@@ -14,28 +14,51 @@ li {
   list-style-type: none;
 }
 
-.NavBlock ul a {
+.navLink {
   font-family: Blagovest, sans-serif;
   display: block;
   font-size: 16px;
   text-decoration: none;
   padding: 5px 15px 5px 15px;
   border-top: 2px solid #f0f0f0;
-  background: linear-gradient(to bottom, #ffffff 0%,#f0f0f0 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
   border-radius: 5px;
   margin-bottom: 1px;
 }
-.NavBlock ul a svg{
+.navLink svg{
   margin-right: 7px;
 }
 
-.NavBlock ul a:link, .NavBlock ul a:visited {
+//.NavBlock ul a:focus{
+//  color: #b26817;
+//  border-top: 2px solid #b26817;
+//}
+//.NavBlock ul a:link, .NavBlock ul a:visited {
+//  color: #186F9C;
+//}
+//.NavBlock ul a:hover{
+//  color: #e5822b;
+//}
+//.NavBlock ul a:active{
+//  color: #a01c26;
+//  border-top: 2px solid #a01c26;
+//}
+
+.navLink:link, .navLink:visited {
   color: #186F9C;
 }
-.NavBlock ul a:hover{
+.navLink:hover{
   color: #e5822b;
 }
-.NavBlock ul a:focus{
-  color: darkslategray;
-  border-top: 2px solid #e5822b;
+.navLink:active{
+  color: #a01c26;
+  border-top: 2px solid #a01c26;
+}
+
+.navActive {
+  border-top: 2px solid #b26817;
+  background: linear-gradient(to bottom, #ffffff 0%, #d9d9d9 100%);
+}
+.navActive *{
+  color: #b26817;
 }

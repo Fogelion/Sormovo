@@ -1,28 +1,7 @@
-import React, {Component, PropTypes } from 'react';
+import React, {Component} from 'react';
 import PersExamp from "./PersExamp";
-import { Route, Link, Redirect } from 'react-router-dom';
-
-// export default function PersonalInfo({ match }) {
-// 	// console.log(match.params.pers);
-// 	const currentPers = PersExamp.find(el => el.id === match.params.pers);
-// 	console.log(currentPers);
-// 	let formatDate = currentPers.date.getFullYear() + '-' + currentPers.date.getMonth() + '-' + currentPers.date.getDate();
-//
-// 	return (
-// 		<div>
-// 			<section className='postPersons'>
-// 				<header className='headerPersons'>
-// 					<h2>{currentPers.title}</h2>
-// 					<time dateTime={formatDate}>{formatDate}</time>
-// 					<Link to={`${match.url}/testPage`}>To the test</Link>
-// 				</header>
-// 				<article className='contentPersons'>
-// 					<p dangerouslySetInnerHTML={{__html: currentPers.text}}></p>
-// 				</article>
-// 			</section>
-// 		</div>
-// 	);
-// }
+import { Link, Redirect } from 'react-router-dom';
+import MainSectionHeader from "../../MainSectionHeader/MainSectionHeader";
 
 export default class PersonalInfo extends Component {
 	render() {
@@ -50,6 +29,7 @@ export default class PersonalInfo extends Component {
 		}
 		return (
 			<div>
+				<MainSectionHeader myHistory={this.props.history}/>
 				{PersInfoPage}
 			</div>
 		);
