@@ -29,7 +29,7 @@ export default class PersonalInfo extends Component {
 		}
 		return (
 			<div>
-				<MainSectionHeader myHistory={this.props.history}/>
+				{/*<MainSectionHeader myHistory={this.props.history}/>*/}
 				{PersInfoPage}
 			</div>
 		);

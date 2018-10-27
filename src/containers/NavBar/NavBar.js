@@ -5,6 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel, faChurch, faGraduationCap, faCameraRetro, faPen } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import * as actions from "../../actions/Actions";
 
 
 import createHistory from 'history/createBrowserHistory';
@@ -14,20 +15,25 @@ import createHistory from 'history/createBrowserHistory';
 
 library.add( faHome, faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel, faChurch, faGraduationCap, faCameraRetro, faPen );
 
-class NavBarList extends Component {
+class NavBar extends Component {
 	NavClick = (event) => {
-		// console.log(createHistory().location.pathname);
-		this.props.onNavClick(event.currentTarget.id);
+		let toStore = {
+			navSelected: event.currentTarget.id,
+			navPath: createHistory().location.pathname
+		};
+		// this.props.onNavClick(toStore);
 	};
 	render() {
+
 		let navMenu = this.props.navPoints.filter(elem => elem.forNavBar);
 		const navList = navMenu.map((elem) => {
-			let navClass = (createHistory().location.pathname === elem.route) ? 'navActive navLink' : 'navLink';
+			let navClass = (this.props.store.status.nav.navPath === elem.route) ? 'navActive navLink' : 'navLink';
 			return <li
 				key={elem.id}
 				id={elem.id}
 				onClick={this.NavClick}
 			>
+				{/*<Link to={elem.route} className='navLink'>*/}
 				<Link to={elem.route} className={navClass}>
 					<FontAwesomeIcon icon={elem.icon}/>
 					<span>{elem.name}</span>
@@ -38,8 +44,8 @@ class NavBarList extends Component {
 			<nav className='NavBlock'>
 				<ul>
 					{navList}
-					<Link to='/nonono/404' className='navLink'>
-						error 404
+					<Link to='/404' className='navLink'>
+						<span>error 404</span>
 					</Link>
 				</ul>
 			</nav>
@@ -48,30 +54,18 @@ class NavBarList extends Component {
 
 }
 
-const toggleNav = (navId) => {
-	return {
-		type: 'TOGGLE',
-		navId
-	}
-};
-
-
 const mapStateToProps = (state) => {
 	return {
-		navActive: state
+		store: state
 	}
 };
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onNavClick: (navId) => {
-			dispatch(toggleNav(navId))
+		onNavClick: (navInfo) => {
+			dispatch(actions.toggleNav(navInfo))
 		}
 	}
 };
-
-
-
-
-const NavBar = connect(mapStateToProps, mapDispatchToProps)(NavBarList);
-export default NavBar;
-
+// const NavBar = connect(mapStateToProps, mapDispatchToProps)(NavBarList);
+// export default NavBar;
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

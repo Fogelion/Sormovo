@@ -21,7 +21,6 @@ export default [
 		'name': 'Главная',
 		'icon': 'home',
 		'route': '/',
-		'component': () => <Home/>,
 		'componentName': <Home/>
 	},
 	{
@@ -30,7 +29,6 @@ export default [
 		'name': 'География',
 		'icon': 'compass',
 		'route': '/geography',
-		'component': () => <Geography/>,
 		'componentName': <Geography/>
 	},
 	{
@@ -39,9 +37,7 @@ export default [
 		'name': 'Общая история',
 		'icon': 'feather',
 		'route': '/history',
-		'component': () => <History/>,
 		'componentName': <History/>
-		// 'component': 'History'
 	},
 	{
 		'id': 'navPointBut300',
@@ -49,9 +45,7 @@ export default [
 		'name': 'Здания',
 		'icon': 'building',
 		'route': '/buildings',
-		'component': () => <Buildings/>,
 		'componentName': <Buildings/>
-		// 'component': 'Buildings'
 	},
 	{
 		'id': 'navPointBut400',
@@ -59,9 +53,7 @@ export default [
 		'name': 'Достижения',
 		'icon': 'trophy',
 		'route': '/achievements',
-		'component': () => <Achievements/>,
 		'componentName': <Achievements/>
-		// 'component': 'Achievements'
 	},
 	{
 		'id': 'navPointBut500',
@@ -70,20 +62,20 @@ export default [
 		'icon': 'user',
 		'params': '/personalities',
 		'route': '/personalities',
-		'component': () => <Personalities/>,
 		'componentName': <Personalities/>,
 	},
 	{
 		'id': 'navPointBut510',
+		'forNavBar': false,
 		'name': 'Люди',
 		'params': '/:pers',
 		'route': '/personalities/:pers',
-		'component': () => <PersonalInfo/>,
 		'componentName': <PersonalInfo/>,
 	},
 	{
 		'id': 'navPointBut511',
 		'name': 'Люди',
+		'forNavBar': false,
 		'params': '/:test',
 		'route': '/personalities/:pers/:test',
 		'componentName': <PersonalTest/>
@@ -94,9 +86,7 @@ export default [
 		'name': 'Памятники ',
 		'icon': 'gavel',
 		'route': '/monuments',
-		'component': () => <Monuments/>,
 		'componentName': <Monuments/>
-		// 'component': 'Monuments'
 	},
 	{
 		'id': 'navPointBut700',
@@ -104,9 +94,7 @@ export default [
 		'name': 'Храмы',
 		'icon': 'church',
 		'route': '/churches',
-		'component': () => <Churches/>,
 		'componentName': <Churches/>
-		// 'component': 'Churches'
 	},
 	{
 		'id': 'navPointBut800',
@@ -114,9 +102,7 @@ export default [
 		'name': 'Школы и библиотеки',
 		'icon': 'graduation-cap',
 		'route': '/schools',
-		'component': () => <Schools/>,
 		'componentName': <Schools/>
-		// 'component': 'Schools'
 	},
 	{
 		'id': 'navPointBut900',
@@ -124,9 +110,7 @@ export default [
 		'name': 'Фотоархивы ',
 		'icon': 'camera-retro',
 		'route': '/photos',
-		'component': () => <Photos/>,
 		'componentName': <Photos/>
-		// 'component': 'Photos'
 	},
 	{
 		'id': 'navPointBut1000',
@@ -134,9 +118,7 @@ export default [
 		'name': 'Об авторах',
 		'icon': 'pen',
 		'route': '/authors',
-		'component': () => <Authors/>,
 		'componentName': <Authors/>
-		// 'component': 'Authors'
 	},
 	{
 		'id': 'navPointBut1100',

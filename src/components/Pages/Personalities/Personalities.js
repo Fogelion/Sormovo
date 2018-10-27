@@ -41,7 +41,7 @@ export default class Personalities extends Component {
 		});
 		return (
 			<div>
-				<MainSectionHeader myHistory={this.props.history}/>
+				{/*<MainSectionHeader myHistory={this.props.history}/>*/}
 				<h1>Personalities</h1>
 				<div className="persShortList">
 					{PersListing}
