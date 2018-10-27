@@ -17,11 +17,11 @@ library.add( faHome, faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel
 
 class NavBar extends Component {
 	NavClick = (event) => {
-		let toStore = {
+		let NavToStore = {
 			navSelected: event.currentTarget.id,
 			navPath: createHistory().location.pathname
 		};
-		this.props.onNavClick(toStore);
+		this.props.toStore(NavToStore);
 	};
 	render() {
 
@@ -61,7 +61,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onNavClick: (navInfo) => {
+		toStore: (navInfo) => {
 			dispatch(actions.toggleNav(navInfo))
 		}
 	}

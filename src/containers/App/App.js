@@ -22,18 +22,19 @@ class App extends Component {
 
 	componentDidUpdate () {
 		let history = createHistory();
-		// let storeLoc = this.props.store.status.myHistory.location.pathname;
+		let storeLoc = this.props.store.status.myHistory.location.pathname;
 		let curLoc = history.location.pathname;
 
 		// if (this.props.store.status.myHistory !== createHistory().location.pathname) {
 		// 	this.props.historyToStore(createHistory().location.pathname);
 		// }
 
-		// if (storeLoc !== curLoc) {
-		// 	this.props.historyToStore(history);
-		// 	// console.log(history);
-		// 	console.log(createHistory().location.pathname);
-		// }
+		if (storeLoc !== curLoc) {
+			this.props.toStore(history);
+			// console.log(history);
+			console.log(createHistory().location.pathname);
+			console.log(this.props.store.status.myHistory);
+		}
 
 	}
 
@@ -56,7 +57,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
 	return {
-		historyToStore: (history) => {
+		toStore: (history) => {
 			dispatch(actions.checkHistory(history))
 		}
 	}
