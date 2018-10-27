@@ -21,7 +21,7 @@ class NavBar extends Component {
 			navSelected: event.currentTarget.id,
 			navPath: createHistory().location.pathname
 		};
-		// this.props.onNavClick(toStore);
+		this.props.onNavClick(toStore);
 	};
 	render() {
 
