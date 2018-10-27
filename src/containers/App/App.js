@@ -7,8 +7,12 @@ import './App.css';
 import createHistory from 'history/createBrowserHistory';
 import * as actions from "../../actions/Actions";
 import {connect} from "react-redux";
+import { withRouter } from 'react-router-dom';
 
 class App extends Component {
+
+
+
 		// let history = createHistory();
 		// let historyToStore = {
 		// 	goBack: history.goBack,
@@ -18,19 +22,18 @@ class App extends Component {
 
 	componentDidUpdate () {
 		let history = createHistory();
-		let storeLoc = this.props.store.status.myHistory.location.pathname;
+		// let storeLoc = this.props.store.status.myHistory.location.pathname;
 		let curLoc = history.location.pathname;
 
-		// console.dir(history);
-		// console.log(this.props.store.status.myHistory);
 		// if (this.props.store.status.myHistory !== createHistory().location.pathname) {
 		// 	this.props.historyToStore(createHistory().location.pathname);
 		// }
-		if (storeLoc !== curLoc) {
-			this.props.historyToStore(history);
-			// console.log(history);
-			// console.log(createHistory().location.pathname);
-		}
+
+		// if (storeLoc !== curLoc) {
+		// 	this.props.historyToStore(history);
+		// 	// console.log(history);
+		// 	console.log(createHistory().location.pathname);
+		// }
 
 	}
 
@@ -58,6 +61,4 @@ const mapDispatchToProps = (dispatch) => {
 		}
 	}
 };
-// const App = connect(mapStateToProps, mapDispatchToProps)(AppR);
-// export default App;
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

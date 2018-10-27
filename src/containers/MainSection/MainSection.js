@@ -8,9 +8,9 @@ import Buildings from "../../components/Pages/Buildings/Buildings";
 export default class MainSection extends Component {
 	render() {
 		const NavRoute = this.props.navPoints.map((elem) => {
-			let UniPath =
-				<Route exact path={`${elem.route}`} component={elem.componentName.type} key={elem.id} />;
-			return UniPath;
+			// let UniPath =
+			// 	<Route exact path={`${elem.route}`} component={elem.componentName.type} key={elem.id} />;
+			return <Route exact path={`${elem.route}`} component={elem.componentName.type} key={elem.id} />;
 		});
 
 		return (
