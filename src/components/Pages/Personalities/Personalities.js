@@ -16,7 +16,7 @@ export default class Personalities extends Component {
 		});
 		return (
 			<div>
-				<h1>Personalities</h1>
+				{/*<h1>Personalities</h1>*/}
 				<div className="persShortList">
 					{PersListing}
 				</div>

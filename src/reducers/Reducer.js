@@ -15,7 +15,8 @@ const stateInit = {
 		location: {
 			pathname: '/'
 		}
-	}
+	},
+	is404: false
 };
 
 
@@ -29,6 +30,10 @@ const contentReducer = (state = stateInit, action) => {
 				sendState);
 		case constants.HISTORY:
 			sendState.myHistory = action.history;
+			return (
+				sendState);
+		case constants.NOTFOUND:
+			sendState.is404 = action.none;
 			return (
 				sendState);
 		default:

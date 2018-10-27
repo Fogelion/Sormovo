@@ -5,7 +5,7 @@ export default function Monuments() {
 
 	return (
 		<div>
-			<h1>Monuments</h1>
+			{/*<h1>Monuments</h1>*/}
 		</div>
 	);
 }

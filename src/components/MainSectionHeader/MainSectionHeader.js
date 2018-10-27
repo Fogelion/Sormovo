@@ -9,12 +9,20 @@ class MainSectionHeader extends Component {
 		this.props.store.status.myHistory.goBack();
 	};
 	render() {
-		let button = (this.props.store.status.nav.navSelected.route === this.props.store.status.myHistory.location.pathname)
-			? <span></span> : <button onClick={this.goBack}>BACK</button>;
+		let button = <span></span>;
+		let title = <span></span>;
+		if (this.props.store.status.is404) {
+			button = '';
+			title = '';
+		} else {
+			button = (this.props.store.status.nav.navSelected.route === this.props.store.status.myHistory.location.pathname)
+				? '' : <button onClick={this.goBack}>BACK</button>;
+			title = <h1>{this.props.store.status.nav.navSelected.name}</h1>;
+		}
 		return (
 			<div>
 				{button}
-				<h1>{this.props.store.status.nav.navSelected.name}</h1>
+				{title}
 			</div>
 		);
 	}

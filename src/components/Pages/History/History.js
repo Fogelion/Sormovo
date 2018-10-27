@@ -8,7 +8,7 @@ export default function History() {
 	// console.log(createHistory());
 	return (
 		<div>
-			<h1>History</h1>
+			{/*<h1>History</h1>*/}
 		</div>
 	);
 }

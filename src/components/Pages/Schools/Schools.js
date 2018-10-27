@@ -5,7 +5,7 @@ export default function Schools() {
 
 	return (
 		<div>
-			<h1>Schools</h1>
+			{/*<h1>Schools</h1>*/}
 		</div>
 	);
 }

@@ -5,7 +5,7 @@ export default function Churches() {
 
 	return (
 		<div>
-			<h1>Churches</h1>
+			{/*<h1>Churches</h1>*/}
 		</div>
 	);
 }

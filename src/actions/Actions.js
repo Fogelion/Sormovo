@@ -12,3 +12,9 @@ export const checkHistory = (history) => {
 		history
 	}
 };
+export const check404 = (none) => {
+	return {
+		type: constants.NOTFOUND,
+		none
+	}
+};

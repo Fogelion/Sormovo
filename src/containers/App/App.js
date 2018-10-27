@@ -24,7 +24,7 @@ class App extends Component {
 				<div className="App">
 					<Header />
 					<NavBar navPoints = {navPoints}/>
-					<MainSection navPoints = {navPoints} location={this.props.store.status.myHistory.location.pathname}/>
+					<MainSection navPoints = {navPoints}/>
 				</div>
     );
   }
