@@ -10,41 +10,21 @@ import {connect} from "react-redux";
 import { withRouter } from 'react-router-dom';
 
 class App extends Component {
-
-
-
-		// let history = createHistory();
-		// let historyToStore = {
-		// 	goBack: history.goBack,
-		// 	path: history.location.pathname
-		// };
-
-
 	componentDidUpdate () {
+		this.locateNav();
+	}
+	locateNav = () => {
 		let history = createHistory();
 		let storeLoc = this.props.store.status.myHistory.location.pathname;
 		let curLoc = history.location.pathname;
-
-		// if (this.props.store.status.myHistory !== createHistory().location.pathname) {
-		// 	this.props.historyToStore(createHistory().location.pathname);
-		// }
-
-		if (storeLoc !== curLoc) {
-			this.props.toStore(history);
-			// console.log(history);
-			console.log(createHistory().location.pathname);
-			console.log(this.props.store.status.myHistory);
-		}
-
-	}
-
-
+		if (storeLoc !== curLoc) this.props.toStore(history);
+	};
 	render() {
     return (
 				<div className="App">
 					<Header />
 					<NavBar navPoints = {navPoints}/>
-					<MainSection navPoints = {navPoints}/>
+					<MainSection navPoints = {navPoints} location={this.props.store.status.myHistory.location.pathname}/>
 				</div>
     );
   }

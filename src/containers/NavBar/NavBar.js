@@ -6,25 +6,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel, faChurch, faGraduationCap, faCameraRetro, faPen } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import * as actions from "../../actions/Actions";
-
-
 import createHistory from 'history/createBrowserHistory';
-
-
-
-
 library.add( faHome, faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel, faChurch, faGraduationCap, faCameraRetro, faPen );
 
+
+
 class NavBar extends Component {
-	NavClick = (event) => {
-		let NavToStore = {
-			navSelected: event.currentTarget.id,
-			navPath: createHistory().location.pathname
-		};
-		this.props.toStore(NavToStore);
+	componentDidUpdate () {
+		this.locateNav();
+	}
+	NavClick = () => {
+		this.locateNav();
+	};
+	locateNav = () => {
+		let NavToStore = this.props.store.status.nav;
+		// let route = createHistory().location.pathname;
+		let route = '/' + createHistory().location.pathname.split('/')[1];
+		let navOn = this.props.navPoints.find(p => p.route === route);
+		if ((NavToStore.navPath !== route) && (typeof navOn !== 'undefined')) {
+			NavToStore.navPath = route;
+			NavToStore.navSelected.id = navOn.id;
+			NavToStore.navSelected.forNavBar = navOn.forNavBar;
+			NavToStore.navSelected.name = navOn.name;
+			NavToStore.navSelected.route = navOn.route;
+			this.props.toStore(NavToStore);
+		}
 	};
 	render() {
-
+		// if (this.props.store.status.nav.navPath !== createHistory().location.pathname) this.locateNav();
+		this.locateNav();
 		let navMenu = this.props.navPoints.filter(elem => elem.forNavBar);
 		const navList = navMenu.map((elem) => {
 			let navClass = (this.props.store.status.nav.navPath === elem.route) ? 'navActive navLink' : 'navLink';
@@ -33,7 +43,6 @@ class NavBar extends Component {
 				id={elem.id}
 				onClick={this.NavClick}
 			>
-				{/*<Link to={elem.route} className='navLink'>*/}
 				<Link to={elem.route} className={navClass}>
 					<FontAwesomeIcon icon={elem.icon}/>
 					<span>{elem.name}</span>

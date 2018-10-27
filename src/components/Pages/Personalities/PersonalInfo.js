@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PersExamp from "./PersExamp";
 import { Link, Redirect } from 'react-router-dom';
-import MainSectionHeader from "../../MainSectionHeader/MainSectionHeader";
 
 export default class PersonalInfo extends Component {
 	render() {
@@ -29,7 +28,6 @@ export default class PersonalInfo extends Component {
 		}
 		return (
 			<div>
-				{/*<MainSectionHeader myHistory={this.props.history}/>*/}
 				{PersInfoPage}
 			</div>
 		);

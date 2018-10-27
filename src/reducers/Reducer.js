@@ -3,14 +3,18 @@ import * as constants from "../constants/Constants";
 
 const stateInit = {
 	nav: {
-		navSelected: 'navPointBut0',
+		navSelected: {
+			'id': 'navPointBut0',
+			'forNavBar': true,
+			'name': 'Главная',
+			'route': '/'
+		},
 		navPath: '/'
 	},
 	myHistory: {
 		location: {
 			pathname: '/'
-		},
-		goBack: {}
+		}
 	}
 };
 
