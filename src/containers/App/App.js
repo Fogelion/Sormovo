@@ -27,6 +27,7 @@ class App extends Component {
 		// this.locateNav();
     return (
 				<div className="App">
+					{/*{this.locateNav()}*/}
 					<Header />
 					<NavBar navPoints = {navPoints}/>
 					<MainSection navPoints = {navPoints}/>

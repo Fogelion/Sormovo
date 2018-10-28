@@ -19,7 +19,7 @@ class NavBar extends Component {
 		this.locateNav();
 	}
 	NavClick = () => {
-		this.locateNav();
+		// this.locateNav();
 	};
 	locateNav = () => {
 		let NavToStore = this.props.store.status.nav;
@@ -56,8 +56,10 @@ class NavBar extends Component {
 		});
 		return (
 			<nav className='NavBlock'>
+				{/*{this.locateNav()}*/}
 				<ul>
 					{navList}
+
 					<Link to='/404' className='navLink'>
 						<span>error 404</span>
 					</Link>
