@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Route, Switch} from "react-router-dom";
 import './MainSection.css';
 import Buildings from "../../components/Pages/Buildings/Buildings";
-import MainSectionHeader from "../../components/MainSectionHeader/MainSectionHeader";
+import MainSectionHeader from "../MainSectionHeader/MainSectionHeader";
 
 
 

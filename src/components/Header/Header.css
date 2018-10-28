@@ -14,7 +14,7 @@
 .Header {
   font-family: Izvestija, sans-serif;
   border-radius: 5px;
-  background: url("../../image/headerBack.jpg");
+  background: url("../../images/headerBack.jpg");
   background-size: cover; }
 
 .Header * {
