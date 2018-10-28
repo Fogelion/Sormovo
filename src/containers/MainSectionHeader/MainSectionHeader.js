@@ -26,6 +26,10 @@ class MainSectionHeader extends Component {
 				<Link to={this.props.store.status.nav.navSelected.route} className='MainTitleLink'>
 					{this.props.store.status.nav.navSelected.name}</Link>
 			</h1>;
+		} else {
+			title = <h1 className='MainTitleBlock'>
+					{this.props.store.status.nav.navSelected.name}
+			</h1>;
 		}
 		return (
 			<div className='HeaderMain'>

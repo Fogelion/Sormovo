@@ -31,7 +31,6 @@ class NotFound extends Component {
 		return (
 			<div>
 				{go404}
-				<h1>404</h1>
 				<h2>Свиток ещё не написан</h2>
 				<Link to='/'><p>Вернуться к летописцу</p></Link>
 			</div>

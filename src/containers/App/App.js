@@ -10,6 +10,9 @@ import {connect} from "react-redux";
 import { withRouter } from 'react-router-dom';
 
 class App extends Component {
+	componentDidMount () {
+		this.locateNav();
+	}
 	componentDidUpdate () {
 		this.locateNav();
 	}
@@ -20,7 +23,8 @@ class App extends Component {
 		if (storeLoc !== curLoc) this.props.toStore(history);
 	};
 	render() {
-		this.locateNav();
+		// if (this.props.store.status.myHistory.location.pathname !== createHistory().location.pathname) this.locateNav();
+		// this.locateNav();
     return (
 				<div className="App">
 					<Header />

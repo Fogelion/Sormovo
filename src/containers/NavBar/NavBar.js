@@ -12,6 +12,9 @@ library.add( faHome, faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel
 
 
 class NavBar extends Component {
+	componentDidMount () {
+		this.locateNav();
+	}
 	componentDidUpdate () {
 		this.locateNav();
 	}
@@ -25,7 +28,6 @@ class NavBar extends Component {
 		let navOn = this.props.navPoints.find(p => p.route === route);
 
 		if ((NavToStore.navPath !== route) && (typeof navOn !== 'undefined')) {
-			console.log(navOn);
 			this.props.store.status.is404 = false;
 			NavToStore.navPath = route;
 			NavToStore.navSelected.id = navOn.id;
@@ -37,7 +39,7 @@ class NavBar extends Component {
 	};
 	render() {
 		// if (this.props.store.status.nav.navPath !== createHistory().location.pathname) this.locateNav();
-		this.locateNav();
+		// this.locateNav();
 		let navMenu = this.props.navPoints.filter(elem => elem.forNavBar);
 		const navList = navMenu.map((elem) => {
 			let navClass = (this.props.store.status.nav.navPath === elem.route) ? 'navActive navLink' : 'navLink';
