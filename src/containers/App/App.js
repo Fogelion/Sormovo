@@ -20,6 +20,7 @@ class App extends Component {
 		if (storeLoc !== curLoc) this.props.toStore(history);
 	};
 	render() {
+		this.locateNav();
     return (
 				<div className="App">
 					<Header />

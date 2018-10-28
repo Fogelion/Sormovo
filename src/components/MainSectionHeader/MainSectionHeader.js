@@ -9,12 +9,9 @@ class MainSectionHeader extends Component {
 		this.props.store.status.myHistory.goBack();
 	};
 	render() {
-		let button = <span></span>;
-		let title = <span></span>;
-		if (this.props.store.status.is404) {
-			button = '';
-			title = '';
-		} else {
+		let button;
+		let title;
+		if (!this.props.store.status.is404) {
 			button = (this.props.store.status.nav.navSelected.route === this.props.store.status.myHistory.location.pathname)
 				? '' : <button onClick={this.goBack}>BACK</button>;
 			title = <h1>{this.props.store.status.nav.navSelected.name}</h1>;
