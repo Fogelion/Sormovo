@@ -26,3 +26,6 @@
   font-size: 90px;
   color: #004b9e;
   text-shadow: -1px -1px 0px #c6dfff, 2px 2px 1px #04283c, 0px 0px 5px #000; }
+
+a:link, a:visited {
+  text-decoration: none; }

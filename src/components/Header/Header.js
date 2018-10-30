@@ -10,7 +10,9 @@ export default function Header() {
 			<div className="headerLogo">
 				<Link to="/"><img src={require("../../images/headerCrest.png")} alt="logo" id="headerLogo"/></Link>
 			</div>
-			<div className="HeaderTit"><h1 className="HeaderName">СОРМОВО.РФ</h1></div>
+			<div className="HeaderTit">
+				<Link to="/"><h1 className="HeaderName">СОРМОВО.РФ</h1></Link>
+			</div>
 		</header>
 	);
 }
