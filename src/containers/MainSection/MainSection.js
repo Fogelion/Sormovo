@@ -9,7 +9,7 @@ import MainSectionHeader from "../MainSectionHeader/MainSectionHeader";
 export default class MainSection extends Component {
 	render() {
 		const NavRoute = this.props.navPoints.map((elem) => {
-			const MediumComp = (props) => <elem.componentName.type {...props}/>;
+			const MediumComp = (props) => <elem.componentName.type {...props} test=""/>;
 			const Path = <Route exact path={`${elem.route}`} render={MediumComp} key={elem.id}/>;
 			return Path;
 		});

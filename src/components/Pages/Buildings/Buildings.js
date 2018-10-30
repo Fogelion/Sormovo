@@ -57,12 +57,13 @@ export default class Buildings extends Component {
 				});
 			}
 		});
-}
+	};
 	render() {
 		const Streets = streets.map((elem) => {
 			const list = <p key={elem.id}>
-				<Link to={`${this.props.match.url}/${elem.id}`}>{elem.name}</Link>
-				{/*{elem.name}*/}
+				<Link to={`${this.props.match.url}/${elem.id}`} id={elem.id}>
+					{elem.name} {elem.type.toLowerCase()}
+				</Link>
 				</p>;
 			return list;
 		});

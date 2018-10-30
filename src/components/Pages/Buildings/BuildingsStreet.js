@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import jsonp from "jsonp";
+import {streets} from './Listing';
 
 export default class MonumentsInfo extends Component {
 	state = {
 		jsonResult: [],
 		street: '',
-		count: 0
+		jsonFull: false
 	};
 	componentDidMount() {
 		let streetId = this.props.match.url.split('/')[2];
-		// console.log(streetId);
 		let url = 'http://kladr-api.ru/api.php' +
-			// '&cityId=5200000100000' +
 			'&streetId=' + streetId +
 			'&contentType=building' +
 			'&limit=100' +
@@ -24,30 +23,40 @@ export default class MonumentsInfo extends Component {
 			if (err) {
 				console.error(err.message);
 			} else {
-				console.log(data.result);
-				this.setState({
-					jsonResult: data.result,
-					street: data.result[0].parents[2],
-					count: this.state.count + 1
-				});
+				// console.log(data.result);
+				if (data.result.length >= 1) {
+					this.setState({
+						jsonResult: data.result,
+						street: data.result[0].parents[2],
+						jsonFull: true
+					});
+				} else {
+					this.setState({
+						jsonFull: false
+					});
+				}
+
 			}
 		});
 	};
 
 
-render() {
+	render() {
+		const StreetChosen = streets.find(el => el.id === this.props.match.url.split('/')[2]);
 		let Title, Houses;
-		// console.log(typeof this.state.jsonResult);
-		if (typeof this.state.street.type !== 'undefined') {
-			Title = `${this.state.street.type.toLowerCase()} ${this.state.street.name}`;
+		if (typeof StreetChosen !== 'undefined') {
+			Title = <h2>{StreetChosen.name} {StreetChosen.type.toLowerCase()}</h2>;
+		} else {
+			Title = <Redirect from={this.props.match.url} to="/404" />;
+		}
+		if (this.state.jsonFull) {
 			Houses = this.state.jsonResult.map((el, ind) => {
 				return (<p key={el.id + ind}>{el.type} №{el.name}, индекс: {el.zip}</p>)
 			});
 		}
-
 		return (
 			<div>
-				<h2>{Title}</h2>
+				{Title}
 				{Houses}
 			</div>
 		);
