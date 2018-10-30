@@ -1,38 +1,69 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
+import {streetList} from './StreetList';
+import {streets} from './Listing';
+import jsonp from 'jsonp';
 
 export default class Buildings extends Component {
+	state = {
+		jsonResult: [],
+		count: 0
+	}
 	componentDidMount() {
-		const jsonp = require('jsonp');
+		let query = '';
 		let url = 'http://kladr-api.ru/api.php' +
-			'?query=' +
+			'?query=' + query +
 			'&cityId=5200000100000' +
 			'&contentType=street' +
 			// '&streetId=52000001000104800' +
 			// '&contentType=building' +
-			'&limit=50';
+			'&limit=40';
+		this.getJSONP(url);
+	}
+	componentDidUpdate(prevProps, prevState) {
+		if (this.state.count !== prevState.count && (typeof prevState.count !== 'undefined')){
+			this.filt();
+		}
+	}
+	filt = () => {
+		// const ss = streetList.split(',').slice(10, 50);
+		const ss = streetList.split(',');
+		const qwe = this.state.jsonResult.filter((val) => {
+			for(let i=0; i<=ss.length-1;i++) {
+				if (val.name == ss[i]) {
+					return val;
+				}
+			}
+		});
+		const ra = this.state.jsonResult.map(el =>{
+			el = {
+				id: el.id,
+				name: el.name,
+				type: el.type
+			};
+			return el
+		});
+	}
+
+	getJSONP = (url, elem) => {
 		jsonp(url, null, (err, data) => {
 			if (err) {
 				console.error(err.message);
 			} else {
-				console.log(data.result);
+				this.setState({
+					jsonResult: data.result,
+					count: this.state.count + 1
+				});
 			}
 		});
-
-
-			// cityId =5200000100000
-// axios({
-// 	method: 'get',
-// 	url: 'http://kladr-api.ru/api.php?query=%D0%90%D1%80%D1%85&contentType=city&withParent=1&limit=2',
-// }).then(res => {
-// 	console.log(res);
-// });
-
-	}
+}
 	render() {
+		const Streets = streets.map((elem) => {
+			return <p key={elem.id}>{elem.name}</p>
+		});
 		return (
 			<div>
+				{Streets}
 			</div>
 		);
 	}
@@ -61,4 +92,22 @@ export default class Buildings extends Component {
 // }).then(res => {
 // 	console.log(res.data.suggestions);
 // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

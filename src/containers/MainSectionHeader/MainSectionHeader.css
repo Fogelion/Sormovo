@@ -1,0 +1,41 @@
+.HeaderMain {
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: 50px 0.8fr auto 1fr;
+  grid-template-areas: "icon . title .";
+  margin: 5px 5px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  border: 3px double #e9e9e9; }
+
+.MainBackIconBlock {
+  grid-area: icon;
+  cursor: pointer;
+  border-right: 3px double #e9e9e9;
+  align-self: center;
+  justify-self: center;
+  padding: 0 10px; }
+
+.MainBackIcon {
+  font-size: 40px; }
+
+.MainBackIconBlock:hover {
+  color: #664b32; }
+
+.MainTitleBlock {
+  grid-area: title;
+  align-self: center;
+  justify-self: center;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0;
+  border-left: 3px double #e9e9e9;
+  border-right: 3px double #e9e9e9;
+  padding: 0 20px; }
+
+.MainTitleLink:link, .MainTitleLink:visited {
+  text-decoration: none;
+  color: #040913; }
+
+.MainTitleLink:hover, .MainTitleLink:active {
+  color: #664b32; }

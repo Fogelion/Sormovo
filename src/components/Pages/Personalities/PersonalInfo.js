@@ -5,7 +5,7 @@ import { Link, Redirect } from 'react-router-dom';
 export default class PersonalInfo extends Component {
 	render() {
 		const currentPers = PersExamp.find(el => el.id === this.props.match.params.pers);
-		// console.log(currentPers);
+		console.log(currentPers);
 		let formatDate, title, text, link, PersInfoPage;
 		if(typeof currentPers !== "undefined") {
 			formatDate = currentPers.date.getFullYear() + '-' + currentPers.date.getMonth() + '-' + currentPers.date.getDate();

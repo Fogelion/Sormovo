@@ -3,11 +3,13 @@ import Home from '../../components/Pages/Home/Home.js';
 import Geography from '../../components/Pages/Geography/Geography.js';
 import History from '../../components/Pages/History/History.js';
 import Buildings from '../../components/Pages/Buildings/Buildings.js';
+import BuildingsStreet from '../../components/Pages/Buildings/BuildingsStreet.js';
 import Achievements from '../../components/Pages/Achievements/Achievements.js';
 import Personalities from '../../components/Pages/Personalities/Personalities.js';
 import PersonalInfo from "../../components/Pages/Personalities/PersonalInfo";
 import PersonalTest from "../../components/Pages/Personalities/PersonalTest";
 import Monuments from '../../components/Pages/Monuments/Monuments.js';
+import MonumentsInfo from '../../components/Pages/Monuments/MonumentsInfo.js';
 import Churches from '../../components/Pages/Churches/Churches.js';
 import Schools from '../../components/Pages/Schools/Schools.js';
 import Photos from '../../components/Pages/Photos/Photos.js';
@@ -48,6 +50,13 @@ export default [
 		'componentName': <Buildings/>
 	},
 	{
+		'id': 'navPointBut310',
+		'forNavBar': false,
+		'name': 'Здания',
+		'route': '/buildings/:street',
+		'componentName': <BuildingsStreet/>
+	},
+	{
 		'id': 'navPointBut400',
 		'forNavBar': true,
 		'name': 'Достижения',
@@ -74,8 +83,8 @@ export default [
 	},
 	{
 		'id': 'navPointBut511',
-		'name': 'Люди',
 		'forNavBar': false,
+		'name': 'Люди',
 		'params': '/:test',
 		'route': '/personalities/:pers/:test',
 		'componentName': <PersonalTest/>
@@ -87,6 +96,14 @@ export default [
 		'icon': 'gavel',
 		'route': '/monuments',
 		'componentName': <Monuments/>
+	},
+	{
+		'id': 'navPointBut610',
+		'forNavBar': false,
+		'name': 'Здания',
+		'params': '/:monum',
+		'route': '/monuments/:monum',
+		'componentName': <MonumentsInfo/>
 	},
 	{
 		'id': 'navPointBut700',

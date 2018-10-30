@@ -23,10 +23,8 @@ class NavBar extends Component {
 	};
 	locateNav = () => {
 		let NavToStore = this.props.store.status.nav;
-		// let route = createHistory().location.pathname;
 		let route = '/' + createHistory().location.pathname.split('/')[1];
 		let navOn = this.props.navPoints.find(p => p.route === route);
-
 		if ((NavToStore.navPath !== route) && (typeof navOn !== 'undefined')) {
 			this.props.store.status.is404 = false;
 			NavToStore.navPath = route;
@@ -56,10 +54,8 @@ class NavBar extends Component {
 		});
 		return (
 			<nav className='NavBlock'>
-				{/*{this.locateNav()}*/}
 				<ul>
 					{navList}
-
 					<Link to='/404' className='navLink'>
 						<span>error 404</span>
 					</Link>
@@ -82,6 +78,4 @@ const mapDispatchToProps = (dispatch) => {
 		}
 	}
 };
-// const NavBar = connect(mapStateToProps, mapDispatchToProps)(NavBarList);
-// export default NavBar;
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

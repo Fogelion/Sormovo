@@ -8,13 +8,13 @@ import registerServiceWorker from './registerServiceWorker';
 import comboRed from './reducers/Reducer';
 import { BrowserRouter as Router} from "react-router-dom";
 
-import { applyMiddleware} from 'redux';
-import { createLogger } from 'redux-logger';
+// import { applyMiddleware} from 'redux';
+// import { createLogger } from 'redux-logger';
 
 const store = createStore(
 	comboRed,
 	composeWithDevTools(
-		applyMiddleware(createLogger())
+		// applyMiddleware(createLogger())
 	)
 );
 

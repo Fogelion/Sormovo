@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import * as actions from "../../../actions/Actions";
 import {connect} from "react-redux";
-import createHistory from "history/createBrowserHistory";
-
-
 
 
 class NotFound extends Component {
@@ -22,7 +19,8 @@ class NotFound extends Component {
 				},
 				navPath: '/404'
 			};
-			this.props.toStore(true, navState);
+			this.props.set404(true);
+			this.props.toStore(navState);
 			return <Redirect from={this.props.match.url} to="/404" />;
 		}
 	};
@@ -45,9 +43,11 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
 	return {
-		toStore: (none, navInfo) => {
-			dispatch(actions.check404(none)),
-			dispatch(actions.toggleNav(navInfo))
+		set404: (none) => {
+			dispatch(actions.check404(none))
+		},
+		toStore: (navInfo) => {
+				dispatch(actions.toggleNav(navInfo))
 		}
 	}
 };
