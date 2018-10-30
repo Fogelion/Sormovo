@@ -3,12 +3,13 @@ import axios from 'axios';
 import {streetList} from './StreetList';
 import {streets} from './Listing';
 import jsonp from 'jsonp';
+import { Link } from 'react-router-dom';
 
 export default class Buildings extends Component {
 	state = {
 		jsonResult: [],
 		count: 0
-	}
+	};
 	componentDidMount() {
 		let query = '';
 		let url = 'http://kladr-api.ru/api.php' +
@@ -18,7 +19,7 @@ export default class Buildings extends Component {
 			// '&streetId=52000001000104800' +
 			// '&contentType=building' +
 			'&limit=40';
-		this.getJSONP(url);
+		this.getJSON(url);
 	}
 	componentDidUpdate(prevProps, prevState) {
 		if (this.state.count !== prevState.count && (typeof prevState.count !== 'undefined')){
@@ -43,9 +44,9 @@ export default class Buildings extends Component {
 			};
 			return el
 		});
-	}
+	};
 
-	getJSONP = (url, elem) => {
+	getJSON = (url, elem) => {
 		jsonp(url, null, (err, data) => {
 			if (err) {
 				console.error(err.message);
@@ -59,7 +60,11 @@ export default class Buildings extends Component {
 }
 	render() {
 		const Streets = streets.map((elem) => {
-			return <p key={elem.id}>{elem.name}</p>
+			const list = <p key={elem.id}>
+				<Link to={`${this.props.match.url}/${elem.id}`}>{elem.name}</Link>
+				{/*{elem.name}*/}
+				</p>;
+			return list;
 		});
 		return (
 			<div>
