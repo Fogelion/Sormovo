@@ -1,0 +1,37 @@
+.StreetsMainList {
+  display: grid;
+  margin: 0 30px;
+}
+.orderAlphaStreets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.orderAlphaStreetsLink {
+  color: #001a3d;
+  text-decoration: none;
+}
+.orderAlphaStreetsLink:visited {
+  color: #805a01;
+}
+.orderAlphaStreetsLink:hover, .orderAlphaStreetsLink:active {
+  color: #4461ae;
+}
+
+
+.BuildingInfoPage {
+  display: grid;
+  margin: 0 30px;
+  grid-template-rows: 50px 450px auto;
+}
+.BuildingInfoPageTitle {
+  align-self: center;
+}
+.BuildingInfoPageMap {
+  align-self: center;
+  //justify-self: start;
+}
+.BuildingInfoPageHouses {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+

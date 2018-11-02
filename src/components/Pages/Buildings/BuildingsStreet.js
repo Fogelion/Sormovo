@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import jsonp from "jsonp";
 import {streets} from './Listing';
 import './Buildings.css';
@@ -77,17 +77,21 @@ export default class BuildingsStreet extends Component {
 		return pos;
 	};
 
+
+
 	render() {
 		let Title, Houses;
 		const StreetChosen = streets.find(el => el.id === this.props.match.url.split('/')[2]);
 		if (typeof StreetChosen !== 'undefined') {
-			Title = <h2>{StreetChosen.name} {StreetChosen.type.toLowerCase()}</h2>;
+			Title = <h2 className="BuildingInfoPageTitle">
+				{StreetChosen.name} {StreetChosen.type.toLowerCase()}
+				</h2>;
 		} else {
 			Title = <Redirect from={this.props.match.url} to="/404" />;
 		}
 		if (this.state.jsonFull) {
 			Houses = this.state.jsonResult.map((el, ind) => {
-				return (<p key={el.id + ind}>{el.type} №{el.name}, индекс: {el.zip}</p>)
+				return (<p key={el.id + ind}>{el.typeShort}. №{el.name}, инд.:{el.zip}</p>)
 			});
 		}
 
@@ -121,20 +125,24 @@ export default class BuildingsStreet extends Component {
 
 
 		return (
-			<div>
+			<div className="BuildingInfoPage">
 				{Title}
-				<YMaps><Map
-					width={500}
-					height={300}
-					state={mapState}
-					modules={[
-						'control.ZoomControl',
-						'control.FullscreenControl']}
-					onClick={this.handleClick}
-				>
-					<Placemark geometry={mapState.center} />
-				</Map></YMaps>
-				{Houses}
+				<section className="BuildingInfoPageMap">
+					<YMaps><Map
+						width={800}
+						height={400}
+						state={mapState}
+						modules={[
+							'control.ZoomControl',
+							'control.FullscreenControl']}
+						onClick={this.handleClick}
+					>
+						<Placemark geometry={mapState.center} />
+					</Map></YMaps>
+				</section>
+				<section className="BuildingInfoPageHouses">
+					{Houses}
+				</section>
 			</div>
 		);
 	}

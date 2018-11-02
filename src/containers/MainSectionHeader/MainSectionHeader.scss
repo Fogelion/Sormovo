@@ -35,10 +35,14 @@
   padding: 0 20px;
 }
 
-.MainTitleLink:link , .MainTitleLink:visited {
+.MainTitleLink{
   text-decoration: none;
-  color: #040913;
+  color: #001a3d;
 }
+//.MainTitleLink:link, .MainTitleLink:visited {
+//  text-decoration: none;
+//  color: #040913;
+//}
 .MainTitleLink:hover, .MainTitleLink:active {
   color: #664b32;
 }

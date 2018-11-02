@@ -4,18 +4,16 @@ import MonumentsExamp from './MonumentsExamp';
 
 export default class Monuments extends Component {
 	render() {
-		const MonumentsListing = MonumentsExamp.map((elem) => {
+		const ArticlesListing = MonumentsExamp.map((elem) => {
 			let formatDate = elem.date.getFullYear() + '-' + elem.date.getMonth() + '-' + elem.date.getDate();
-			return <section className='monumShort' key={elem.id}>
-				<Link to={`${this.props.match.url}/${elem.id}`}>{elem.title}</Link>
-				<time dateTime={formatDate}>{formatDate}</time>
+			return <section className='articleShort' key={elem.id}>
+				<Link to={`${this.props.match.url}/${elem.id}`} className="articleShortLink" >{elem.title}</Link>
+				<time dateTime={formatDate} className="articleShortTime" >{formatDate}</time>
 			</section>
 		});
 		return (
-			<div>
-				<div className="monumShortList">
-					{MonumentsListing}
-				</div>
+			<div className="articleShortList">
+				{ArticlesListing}
 			</div>
 		);
 	}

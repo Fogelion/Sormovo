@@ -5,6 +5,9 @@ import {connect} from "react-redux";
 
 
 class NotFound extends Component {
+	componentDidMount() {
+		this.if404();
+	}
 	componentDidUpdate () {
 		this.if404();
 	}
@@ -21,11 +24,11 @@ class NotFound extends Component {
 			};
 			this.props.set404(true);
 			this.props.toStore(navState);
-			return <Redirect from={this.props.match.url} to="/404" />;
 		}
 	};
 	render() {
-		let go404 = this.if404();
+		let go404 = (this.props.store.status.is404 && this.props.match.url!=="/404") ?
+			<Redirect from={this.props.match.url} to="/404" /> : "" ;
 		return (
 			<div>
 				{go404}

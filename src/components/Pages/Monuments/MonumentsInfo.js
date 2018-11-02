@@ -4,28 +4,28 @@ import { Redirect } from 'react-router-dom';
 
 export default class MonumentsInfo extends Component {
 	render() {
-		const currentMonum = MonumentsExamp.find(el => el.id === this.props.match.params.monum);
-		let formatDate, title, text, MonumInfoPage;
-		if(typeof currentMonum !== "undefined") {
-			formatDate = currentMonum.date.getFullYear() + '-' + currentMonum.date.getMonth() + '-' + currentMonum.date.getDate();
-			title = currentMonum.title;
-			text = currentMonum.text;
-			MonumInfoPage =
-				<section className='postMonum'>
-					<header className='headerMonum'>
-						<h2>{title}</h2>
-						<time dateTime={formatDate}>{formatDate}</time>
+		const currentPage = MonumentsExamp.find(el => el.id === this.props.match.params.monum);
+		let formatDate, title, text, InfoPage;
+		if(typeof currentPage !== "undefined") {
+			formatDate = currentPage.date.getFullYear() + '-' + currentPage.date.getMonth() + '-' + currentPage.date.getDate();
+			title = currentPage.title;
+			text = currentPage.text;
+			InfoPage =
+				<section className='contentSection'>
+					<header className='contentHeader'>
+						<h2 className='contentTitle'>{title}</h2>
+						<p className='contentTime'><time dateTime={formatDate}>{formatDate}</time></p>
 					</header>
-					<article className='contentMonum'>
+					<article className='contentText'>
 						<p dangerouslySetInnerHTML={{__html: text}}></p>
 					</article>
 				</section>;
 		} else {
-			MonumInfoPage = <Redirect from={this.props.match.url} to="/404" />;
+			InfoPage = <Redirect from={this.props.match.url} to="/404" />;
 		}
 		return (
-			<div>
-				{MonumInfoPage}
+			<div className='contentInfoPage'>
+				{InfoPage}
 			</div>
 		);
 	}
