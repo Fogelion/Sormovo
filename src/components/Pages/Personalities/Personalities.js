@@ -9,7 +9,6 @@ export default class Personalities extends Component {
 		const PersAlphabet = ALPHABET.slice(1).map((elem, index) => {
 			return <span key={elem + index}>{elem}</span>
 		});
-		console.log(PersAlphabet);
 		const ArticlesListing = PersExamp.map((elem) => {
 			// let formatDate = elem.date.getFullYear() + '-' + elem.date.getMonth() + '-' + elem.date.getDate();
 			return<section className='articleShort' key={elem.id}>

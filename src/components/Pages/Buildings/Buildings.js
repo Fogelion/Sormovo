@@ -9,11 +9,11 @@ export default class Buildings extends Component {
 	render() {
 		const streetsAlpha = ALPHABET.filter(p => p !== "Ы" && p !== "Ж" && p !== "Ё");
 		const Streets = streetsAlpha.map((elem, index) => {
-			let order = streets.filter(filt => {
-				if (index === 0 && filt.name.substring(0,1) >= 1 && filt.name.substring(0,1) <= 9) {
-					return filt;
-				} else if (filt.name.substring(0,1) === elem) {
-					return filt;
+			let order = streets.filter((filtr) => {
+				if (index === 0 && filtr.name.substring(0,1) >= 1 && filtr.name.substring(0,1) <= 9) {
+					return filtr;
+				} else if (filtr.name.substring(0,1) === elem) {
+					return filtr;
 				}
 			});
 			let orderingStreets = order.map(street =>
