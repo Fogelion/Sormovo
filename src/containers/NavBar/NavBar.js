@@ -25,7 +25,7 @@ class NavBar extends Component {
 		let NavToStore = this.props.store.status.nav;
 		let route = '/' + createHistory().location.pathname.split('/')[1];
 		let navOn = this.props.navPoints.find(p => p.route === route);
-		if ((NavToStore.navPath !== route) && (typeof navOn !== 'undefined')) {
+		if ((NavToStore.navSelected.route !== route) && (typeof navOn !== 'undefined')) {
 			this.props.store.status.is404 = false;
 			NavToStore.navPath = route;
 			NavToStore.navSelected.id = navOn.id;

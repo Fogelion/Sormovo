@@ -15,7 +15,7 @@ class NotFound extends Component {
 		if (!this.props.store.status.is404) {
 			let navState = {
 				navSelected: {
-					'id': 'navPointBut1100',
+					'id': 'navPointBut404404',
 					'forNavBar': false,
 					'name': '404',
 					'route': '/404',

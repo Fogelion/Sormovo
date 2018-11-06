@@ -15,8 +15,8 @@ import Schools from '../../components/Pages/Schools/Schools.js';
 import Photos from '../../components/Pages/Photos/Photos.js';
 import Authors from '../../components/Pages/Authors/Authors.js';
 import NotFound from '../../components/Pages/NotFound/NotFound.js';
-import Books from "../../components/Pages/Books/Books";
-import Documents from "../../components/Pages/Documents/Documents";
+import Books from "../../components/Pages/Books/Books.js";
+import Documents from "../../components/Pages/Documents/Documents.js";
 
 export default [
 	{
@@ -141,13 +141,6 @@ export default [
 	},
 	{
 		'id': 'navPointBut1100',
-		'forNavBar': false,
-		'name': '404',
-		'route': '*',
-		'componentName': <NotFound />
-	},
-	{
-		'id': 'navPointBut1200',
 		'forNavBar': true,
 		'name': 'Книги',
 		'icon': 'pen',
@@ -155,11 +148,24 @@ export default [
 		'componentName': <Books/>
 	},
 	{
-		'id': 'navPointBut1300',
+		'id': 'navPointBut1200',
 		'forNavBar': true,
 		'name': 'Документы',
 		'icon': 'pen',
 		'route': '/documents',
 		'componentName': <Documents/>
+	},
+
+
+
+
+
+
+	{
+		'id': 'navPointBut404404',
+		'forNavBar': false,
+		'name': '404',
+		'route': '*',
+		'componentName': <NotFound />
 	},
 ]
