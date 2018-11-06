@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import './NavBar.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel, faChurch, faGraduationCap, faCameraRetro, faPen } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel, faChurch, faGraduationCap, faCameraRetro, faPen, faBook, faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import * as actions from "../../actions/Actions";
 import createHistory from 'history/createBrowserHistory';
-library.add( faHome, faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel, faChurch, faGraduationCap, faCameraRetro, faPen );
+library.add( faHome, faCompass, faFeather, faBuilding, faTrophy, faUser, faGavel, faChurch, faGraduationCap, faCameraRetro, faPen, faBook, faPaperclip );
+
 
 
 

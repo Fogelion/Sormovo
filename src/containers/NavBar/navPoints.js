@@ -143,7 +143,7 @@ export default [
 		'id': 'navPointBut1100',
 		'forNavBar': true,
 		'name': 'Книги',
-		'icon': 'pen',
+		'icon': 'book',
 		'route': '/books',
 		'componentName': <Books/>
 	},
@@ -151,7 +151,7 @@ export default [
 		'id': 'navPointBut1200',
 		'forNavBar': true,
 		'name': 'Документы',
-		'icon': 'pen',
+		'icon': 'paperclip',
 		'route': '/documents',
 		'componentName': <Documents/>
 	},
