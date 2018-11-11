@@ -132,14 +132,6 @@ export default [
 		'componentName': <Photos/>
 	},
 	{
-		'id': 'navPointBut1000',
-		'forNavBar': true,
-		'name': 'Об авторах',
-		'icon': 'pen',
-		'route': '/authors',
-		'componentName': <Authors/>
-	},
-	{
 		'id': 'navPointBut1100',
 		'forNavBar': true,
 		'name': 'Книги',
@@ -154,6 +146,14 @@ export default [
 		'icon': 'paperclip',
 		'route': '/documents',
 		'componentName': <Documents/>
+	},
+	{
+		'id': 'navPointBut1300',
+		'forNavBar': true,
+		'name': 'Об авторах',
+		'icon': 'pen',
+		'route': '/authors',
+		'componentName': <Authors/>
 	},
 
 

@@ -48,8 +48,8 @@ class NavBar extends Component {
 				onClick={this.NavClick}
 			>
 				<Link to={elem.route} className={navClass}>
-					<FontAwesomeIcon icon={elem.icon}/>
-					<span>{elem.name}</span>
+					<div className="navIcon"><FontAwesomeIcon icon={elem.icon}/></div>
+					<div className="navName">{elem.name}</div>
 				</Link>
 			</li>
 		});
@@ -58,7 +58,8 @@ class NavBar extends Component {
 				<ul>
 					{navList}
 					<Link to='/404' className='navLink'>
-						<span>error 404</span>
+						<div className="navIcon"></div>
+						<div className="navName">error 404</div>
 					</Link>
 				</ul>
 			</nav>
